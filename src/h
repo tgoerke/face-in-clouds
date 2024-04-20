@@ -1,0 +1,69 @@
+   54  git clone https://github.com/consensus-shipyard/ipc.git
+   55  cd ipc/
+   56  make
+   57  ./target/release/ipc-cli --version
+   58  alias ipc-cli="cargo run -q -p ipc-cli --release --"
+   59  cd ..
+   60  mv ipc/ face-in-clouds/
+   61  cd face-in-clouds/ipc/
+   62  alias ipc-cli="cargo run -q -p ipc-cli --release --"
+   63  ipc-cli config init
+   64  vi ~/.ipc/config.toml 
+   65  ipc-cli wallet new --wallet-type evm
+   67  ipc-cli wallet set-default --address 0x5ad2fa0996f7c25b446c5722f7254006616db509 --wallet-type evm
+   69  ipc-cli subnet create --parent /r314159 --min-validator-stake 1 --min-validators 4 --bottomup-check-period 300 --from 0x5ad2fa0996f7c25b446c5722f7254006616db509 --permission-mode collateral --supply-source-kind native
+   82  ipc-cli subnet create --parent /r314159 --min-validator-stake 1 --min-validators 4 --bottomup-check-period 300 --from 0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26 --permission-mode collateral --supply-source-kind native
+   86  ipc-cli subnet join --from=0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26 --subnet=/r314159/t410form3wlkhum4pfugeypicziaeytitupzgpckoxri --collateral=10 --public-key=0410bf3d915abfea20f3b9bb09f1f29aca9da5f2b8592476ccb215c0c78823f02a415e614e71d11508c6dd2b2eb536e789389d0ba5a96dfbf1c9256c6f96967c69 --initial-balance 1
+   92  ipc-cli wallet pub-key --wallet-type evm --address 0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26
+   93  ipc-cli wallet list --wallet-type evm
+   94  ipc-cli wallet list --wallet-type evm >> join 
+   95  vi join 
+   96  cat join 
+   97  ipc-cli subnet join --from=0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26 --subnet=/r314159/t410form3wlkhum4pfugeypicziaeytitupzgpckoxri --collateral=10 --public-key=0410bf3d915abfea20f3b9bb09f1f29aca9da5f2b8
+  107  ipc-cli wallet list --wallet-type evm 
+  110  ipc-cli subnet join --from=0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26 --subnet=/r314159/t410form3wlkhum4pfugeypicziaeytitupzgpckoxri --collateral=10 --initial-balance 1
+  111  ipc-cli subnet join --from=0xbf225578ec98224b0757049d03b15f1542a2d0a7 --subnet=/r314159/t410form3wlkhum4pfugeypicziaeytitupzgpckoxri --collateral=10 --initial-balance 1
+  112  cat >d
+  114  ipc-cli wallet list --wallet-type evm 
+  116  ipc-cli wallet export --wallet-type evm --address 0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26 --hex > ~/.ipc/validator_1.sk
+  117  ipc-cli wallet export --wallet-type evm --address 0xbf225578ec98224b0757049d03b15f1542a2d0a7 --hex > ~/.ipc/validator_2.sk
+  118  ipc-cli wallet export --wallet-type evm --address 0x5ad2fa0996f7c25b446c5722f7254006616db509 --hex > ~/.ipc/validator_3.sk
+  119  ipc-cli wallet export --wallet-type evm --address 0x9e19dbe0334a752e6dfa493af096ce07557cffdf --hex > ~/.ipc/validator_4.sk
+  128  cat s
+  129  cargo make --makefile infra/fendermint/Makefile.toml     -e NODE_NAME=validator-1     -e PRIVATE_KEY_PATH=~/.ipc/validator_1.sk
+  138  ipc-cli subnet join --from=0xbf225578ec98224b0757049d03b15f1542a2d0a7 --subnet=/r314159/t410form3wlkhum4pfugeypicziaeytitupzgpckoxri --collateral=10 --initial-balance 1
+  139  cat j
+  140  sh j
+  141  vi j
+  143  sh j
+  144  sh s
+  145  less ~/.ipc/config.toml 
+  146  vi ~/.ipc/config.toml 
+  147  ipc-cli wallet list --wallet-type evm 
+  148  # see if we are funded -  https://calibration.filfox.info/en/address/0x9e19dbe0334a752e6dfa493af096ce07557cffdf
+  149  ipc-cli wallet list --wallet-type evm 
+  150  cat j
+  151  ipc-cli subnet join --from=0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26 --subnet=/r314159/t410form3wlkhum4pfugeypicziaeytitupzgpckoxri --collateral=10 --initial-balance 1
+  152  cat j
+  153  cat d
+  154  cat s
+  155  sh s
+  156  ipc-cli wallet list --wallet-type evm 
+  157  ipc-cli subnet create --parent /r314159 --min-validator-stake 1 --min-validators 4 --bottomup-check-period 300 --from 0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26 --permission-mode collateral --supply-source-kind native
+  158  vi j
+  159  sh j
+  160  vi s
+  161  sh s
+  162  pwd
+  163  vi s
+  164  sh s
+  165  mv s s1
+  166  cat >s2
+  167  cat s1
+  168  vi s2
+  169  sh s2
+  170  sh s1
+  171  cat s2
+  172  vi ~/.ipc/config.toml 
+  183  ipc-cli wallet balances --wallet-type evm --subnet=/r314159/t410fe6ota3cu4msgpwbwkkcx4j5j35267nj6rrs4iga
+  184  history >h

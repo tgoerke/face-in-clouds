@@ -1,0 +1,13 @@
+alias ipc-cli="cargo run -q -p ipc-cli --release --"
+
+
+subnet=/r314159/t410fe6ota3cu4msgpwbwkkcx4j5j35267nj6rrs4iga
+
+ipc-cli subnet join --from=0x34fb473c5fc21958c6d2bb9d7bd1c8a080b0ae26 --subnet=$subnet --collateral=10 --initial-balance 1
+
+ipc-cli subnet join --from=0xbf225578ec98224b0757049d03b15f1542a2d0a7 --subnet=$subnet --collateral=10 --initial-balance 1
+
+ipc-cli subnet join --from=0x5ad2fa0996f7c25b446c5722f7254006616db509 --subnet=$subnet --collateral=10 --initial-balance 1
+
+ipc-cli subnet join --from=0x9e19dbe0334a752e6dfa493af096ce07557cffdf --subnet=$subnet --collateral=10 --initial-balance 1
+

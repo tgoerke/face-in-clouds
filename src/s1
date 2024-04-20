@@ -1,0 +1,15 @@
+cargo make --makefile infra/fendermint/Makefile.toml \
+    -e NODE_NAME=validator-1 \
+    -e PRIVATE_KEY_PATH=$HOME/.ipc/validator_1.sk \
+    -e SUBNET_ID=/r314159/t410fe6ota3cu4msgpwbwkkcx4j5j35267nj6rrs4iga \
+    -e CMT_P2P_HOST_PORT=26656 \
+    -e CMT_RPC_HOST_PORT=26657 \
+    -e ETHAPI_HOST_PORT=8545 \
+    -e RESOLVER_HOST_PORT=26655 \
+    -e PARENT_GATEWAY=`curl -s https://raw.githubusercontent.com/consensus-shipyard/ipc/cd/contracts/deployments/r314159.json | jq -r '.gateway_addr'` \
+    -e PARENT_REGISTRY=`curl -s https://raw.githubusercontent.com/consensus-shipyard/ipc/cd/contracts/deployments/r314159.json | jq -r '.registry_addr'` \
+    -e FM_PULL_SKIP=1 \
+    child-validator
+
+# old subnet id, did not work
+# /r314159/t410form3wlkhum4pfugeypicziaeytitupzgpckoxri

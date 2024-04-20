@@ -1,0 +1,17 @@
+subnet_id=/r314159/t410fe6ota3cu4msgpwbwkkcx4j5j35267nj6rrs4iga
+peer_id=16Uiu2HAmCgVTL4PcPmW6YU92TBUQAoKvjGBFFgsDXMikETJB11Va
+node_id=ca644ac3194d39a2834f5d98e141d682772c149b
+cargo make --makefile infra/fendermint/Makefile.toml \
+    -e NODE_NAME=validator-2 \
+    -e PRIVATE_KEY_PATH=$HOME/.ipc/validator_2.sk \
+    -e SUBNET_ID=$subnet_id \
+    -e CMT_P2P_HOST_PORT=26756 \
+    -e CMT_RPC_HOST_PORT=26757 \
+    -e ETHAPI_HOST_PORT=8645 \
+    -e RESOLVER_HOST_PORT=26755 \
+    -e BOOTSTRAPS=$node_id@validator-1-cometbft:26656 \
+    -e RESOLVER_BOOTSTRAPS=/dns/validator-1-fendermint/tcp/26655/p2p/$peer_id \
+    -e PARENT_GATEWAY=`curl -s https://raw.githubusercontent.com/consensus-shipyard/ipc/cd/contracts/deployments/r314159.json | jq -r '.gateway_addr'` \
+    -e PARENT_REGISTRY=`curl -s https://raw.githubusercontent.com/consensus-shipyard/ipc/cd/contracts/deployments/r314159.json | jq -r '.registry_addr'` \
+    child-validator
+
