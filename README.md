@@ -3,9 +3,6 @@
 
 face-in-clouds is a storage application running on Filecoin IPC that leverages ZK proofs
 
-Towards a data commons for open educational resources leveraging IPC & ZK.
-
-
 Filecoin on it's mission to create decentralized storage, safeguard humanity's data and bring compute **to** the data has a huge potential to put things right for OER. Open educational resources (OER) aim to be teaching, learning, and research materials intentionally created and licensed to be free for the end user to own, share, and in most cases, modify. The reality is that in a person-centric data economy most resources are actually hosted on platforms and reputation is build by resource providers to build a followership there. Web3 still lacks of decentralized reputation system that could offer a practical alternative to platforms right now.  This hackathon projects has a focus on the data availability layer combined with some ideas to setup light incentive structures.
 
 Filecoin & IPC 
@@ -178,15 +175,11 @@ IPLD Resolver Multiaddress:
 [cargo-make] INFO - Build Done in 63.64 seconds.
 
 
-
-
-
-
-
-
-
-
 ## Step 7: Interact with your subnet using the IPC CLI
+
+
+---
+Repos: https://github.com/risc0/risc0-rust-examples/tree/main/json
 
 tgoerke@pad:~/src/face-in-clouds/ipc$ ipc-cli wallet balances --wallet-type evm --subnet=/r314159/t410fe6ota3cu4msgpwbwkkcx4j5j35267nj6rrs4iga
 0x5ad2fa0996f7c25b446c5722f7254006616db509 - Balance: 1.0
